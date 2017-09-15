@@ -1,0 +1,22 @@
+<body>
+<div class="table-responsive custom-table">
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Company</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let u of api.UserList" >
+      <td>{{u.name}} </td>
+      <td>{{u.email}}</td>
+      <td>{{u.address.street}}</td>
+      <td>{{u.company.name}}</td>
+        <button type="button" class="btn btn-default btn-danger" (click)="api.Remove(u.id)">
+          <span class="glyphicon glyphicon-trash" >Remove</span> 
+        </button>
+    </tr>
+  </table>
+  </div>
+</body>
